@@ -1,0 +1,4 @@
+# Ignore my AWS access keys
+jenkins-key.pem
+nexus-key.pem
+sonar-key.pem
