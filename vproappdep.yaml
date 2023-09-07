@@ -21,10 +21,13 @@ spec:
           - name: vproapp-port
             containerPort: 8080
       
-      initContainers:
-        - name: init-mydb
-          image: busybox
-          command: ['sh', '-c', 'until nslookup vprodb; do echo waiting for mydb; sleep 2; done;']
-        - name: init-memcache
-          image: busybox
-          command: ['sh', '-c', 'until nslookup vprocache; do echo waiting for mydb; sleep 2; done;']
+      # Commented out the below code because there appears to be a bug where init containers 
+      #...stay stuck initialising
+      
+      # initContainers:
+      #   - name: init-mydb
+      #     image: busybox
+      #     command: ['sh', '-c', 'until nslookup vprodb; do echo waiting for mydb; sleep 2; done;']
+      #   - name: init-memcache
+      #     image: busybox
+      #     command: ['sh', '-c', 'until nslookup vprocache; do echo waiting for mydb; sleep 2; done;']
